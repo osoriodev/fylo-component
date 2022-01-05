@@ -1,0 +1,47 @@
+/* ------- RESET ------- */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  min-height: 100vh;
+  font-size: 1.6rem;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+ul, ol {
+  list-style: none;
+}
+picture, img {
+  max-width: 100%;
+  display: block;
+}
+button, input, textarea, select, optgroup {
+  font: inherit;
+}
+button {
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
