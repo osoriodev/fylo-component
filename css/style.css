@@ -1,3 +1,14 @@
+/* ----- VARIABLES ----- */
+:root {
+  --clr-primary: #1D2C67;
+  --clr-primary-dk: #0C122C;
+  --clr-secondary: #FFA399;
+  --clr-tertiary: #FF4D97;
+  --clr-base: #DDDBFF;
+  --clr-base-dk: #848794;
+  --clr-ntrl-max: #FFF;
+  --ff-primary: 'Raleway', sans-serif;
+}
 /* ------- RESET ------- */
 html {
   font-size: 62.5%;
@@ -13,6 +24,7 @@ html:focus-within {
 }
 body {
   min-height: 100vh;
+  font-family: var(--ff-primary);
   font-size: 1.6rem;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
