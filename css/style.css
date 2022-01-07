@@ -73,13 +73,14 @@ a {
   width: 100%;
   min-height: 100vh;
   padding: 12.7rem 2.5rem 16.4rem;
+  display: grid;
+  place-items: center;
   color: var(--clr-ntrl-max);
   background: url("../assets/bg-mobile.png") top center / cover no-repeat;
 }
 .storage {
   width: 100%;
   max-width: 52rem;
-  margin: 0 auto;
   position: relative;
 }
 .storage__controls {
@@ -144,6 +145,7 @@ a {
   height: 2rem;
   margin-bottom: .8rem;
   display: block;
+  position: relative;
   border: .3rem solid #141E4A;
   border-radius: 1rem;
   overflow: hidden;
@@ -151,7 +153,7 @@ a {
   background-color: #141E4A;
 }
 .storage__bar-gauge {
-  width: 75.5%;
+  width: 74.5%;
   height: 1.4rem;
   border-radius: 1rem;
   background-image: linear-gradient(to left, var(--grd-primary));
@@ -159,6 +161,17 @@ a {
 .storage__bar::-moz-meter-bar {
   border-radius: 1rem;
   background-image: linear-gradient(to left, var(--grd-primary));
+}
+.storage__bar::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  position: absolute;
+  top: calc(50% - .5rem);
+  left: calc(74.5% - 1.2rem);
+  border-radius: 50%;
+  background-color: var(--clr-ntrl-max);
 }
 .storage__popup {
   width: fit-content;
@@ -190,4 +203,49 @@ a {
 .storage__value {
   font-size: 1.2rem;
   font-weight: 700;
+}
+@media (min-width: 64em) {
+  .main {
+    padding: 1rem;
+    background: url("../assets/bg-desktop.png") left bottom / contain no-repeat var(--clr-primary-dk);
+  }
+  .storage {
+    max-width: 92rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 3rem;
+  }
+  .storage__controls {
+    width: 35rem;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .storage__info {
+    width: 100%;
+    padding: 3.7rem 4rem;
+  }
+  .storage__description {
+    text-align: start;
+  }
+  .storage__popup {
+    width: auto;
+    margin: 0;
+    top: 0;
+    left: auto;
+    right: 4rem;
+    transform: none;
+  }
+  .storage__popup::before {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    border-width: 0 3.5rem 3.5rem 0;
+    border-style: solid;
+    border-color: transparent var(--clr-ntrl-max) transparent transparent;
+  }
 }
