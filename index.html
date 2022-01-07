@@ -13,6 +13,41 @@
     <link rel="icon" href="./assets/favicon.png" sizes="32x32" type="image/png">
   </head>
   <body>
-    <main class="main"></main>
+    <main class="main">
+      <article class="storage">
+        <h1 class="sr-only">Data storage</h1>
+        <div class="storage__controls">
+          <img class="storage__img" src="./assets/logo.svg" alt="Fylo logo">
+          <ul class="storage__btns-list">
+            <li>
+              <button class="storage__btn" aria-label="Document">
+                <i class="storage__icon storage__icon--document" aria-hidden="true"></i>
+              </button>
+            </li>
+            <li>
+              <button class="storage__btn" aria-label="Folder">
+                <i class="storage__icon storage__icon--folder" aria-hidden="true"></i>
+              </button>
+            </li>
+            <li>
+              <button class="storage__btn" aria-label="Upload">
+                <i class="storage__icon storage__icon--upload" aria-hidden="true"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="storage__info">
+          <p class="storage__description">You've used <em>815 GB</em> of your storage</p>
+          <meter class="storage__bar" min="0" max="100" value="75.5" aria-label="Gigabytes">
+            <div class="storage__bar-gauge"></div>
+          </meter>
+          <p class="storage__popup"><em>185</em> GB left</p>
+          <div class="storage__values-wrapper">
+            <p class="storage__value">0 GB</p>
+            <p class="storage__value">1000 GB</p>
+          </div>
+        </div>
+      </article>
+    </main>
   </body>
 </html>
