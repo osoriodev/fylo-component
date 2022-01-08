@@ -14,37 +14,40 @@
   </head>
   <body>
     <main class="main">
-      <article class="storage">
+      <article class="ds">
         <h1 class="sr-only">Data storage</h1>
-        <div class="storage__controls">
-          <img class="storage__img" src="./assets/logo.svg" alt="Fylo logo">
-          <ul class="storage__btns-list">
+        <div class="ds__content">
+          <img class="ds__img" src="./assets/logo.svg" alt="Fylo logo">
+          <ul class="ds__btns-list">
             <li>
-              <button class="storage__btn" aria-label="Document">
-                <i class="storage__icon storage__icon--document" aria-hidden="true"></i>
+              <button class="ds__btn" aria-label="Document">
+                <i class="ds__icon ds__icon--document" aria-hidden="true"></i>
               </button>
             </li>
             <li>
-              <button class="storage__btn" aria-label="Folder">
-                <i class="storage__icon storage__icon--folder" aria-hidden="true"></i>
+              <button class="ds__btn" aria-label="Folder">
+                <i class="ds__icon ds__icon--folder" aria-hidden="true"></i>
               </button>
             </li>
             <li>
-              <button class="storage__btn" aria-label="Upload">
-                <i class="storage__icon storage__icon--upload" aria-hidden="true"></i>
+              <button class="ds__btn" aria-label="Upload">
+                <i class="ds__icon ds__icon--upload" aria-hidden="true"></i>
               </button>
             </li>
           </ul>
         </div>
-        <div class="storage__info">
-          <p class="storage__description">You've used <em>815 GB</em> of your storage</p>
-          <meter class="storage__bar" min="0" max="100" value="75.5" aria-label="Gigabytes">
-            <div class="storage__bar-gauge"></div>
-          </meter>
-          <p class="storage__popup"><em>185</em> GB left</p>
-          <div class="storage__values-wrapper">
-            <p class="storage__value">0 GB</p>
-            <p class="storage__value">1000 GB</p>
+        <div class="ds__content">
+          <p class="ds__description">You've used <em>815 GB</em> of your storage</p>
+          <div class="bar">
+            <meter class="bar__base" min="0" max="1000" value="815" title="GB"></meter>
+            <div class="bar__gauge"></div>
+          </div>
+          <div class="ds__ranks">
+            <p class="ds__value">0 GB</p>
+            <p class="ds__value">1000 GB</p>
+          </div>
+          <div class="ds__popup">
+            <p class="ds__popup-text"><em>185</em> GB left</p>
           </div>
         </div>
       </article>
