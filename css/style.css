@@ -80,7 +80,7 @@ a {
 }
 .ds {
   width: 100%;
-  max-width: 100%;
+  max-width: 50rem;
   position: relative;
 }
 .ds__content {
@@ -154,11 +154,12 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  transform: translateY(50%);
   border-radius: 1rem;
   text-align: center;
   color: var(--clr-base-dk);
   background-color: var(--clr-ntrl-max);
+  opacity: 0;
+  animation: popup .35s linear 2.7s forwards;
 }
 .ds__popup-text {
   font-size: 1.3rem;
@@ -201,6 +202,8 @@ a {
   border-radius: 1rem;
   background-image: linear-gradient(to left, var(--grd-primary));
   pointer-events: none;
+  transform: translateX(calc(-100% + 1.4rem));
+  animation: bar 1.4s ease-in-out 1s forwards;
 }
 .bar__gauge::before {
   content: '';
@@ -212,6 +215,32 @@ a {
   right: .2rem;
   border-radius: 50%;
   background-color: var(--clr-ntrl-max);
+}
+@keyframes bar {
+  from {
+    transform: translateX(calc(-100% + 1.4rem));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes popup {
+  0% {
+    transform: translateY(50%) scale(0.9);
+    opacity: .2;
+  }
+  40% {
+    transform: translateY(50%) scale(1);
+    opacity: .5;
+  }
+  60% {
+    transform: translateY(50%) scale(1.1);
+    opacity: .8;
+  }
+  100% {
+    transform: translateY(50%) scale(1);
+    opacity: 1;
+  }
 }
 @media (min-width: 64em) {
   .main {
@@ -242,7 +271,7 @@ a {
     top: 0;
     right: 4rem;
     bottom: auto;
-    transform: none;
+    transform-origin: right bottom;
   }
   .ds__popup-text {
     position: relative;
@@ -258,5 +287,23 @@ a {
     border-width: 0 3.5rem 3.5rem 0;
     border-style: solid;
     border-color: transparent var(--clr-ntrl-max) transparent transparent;
+  }
+  @keyframes popup {
+    0% {
+      transform: scale(0.6);
+      opacity: .2;
+    }
+    40% {
+      transform: scale(.9);
+      opacity: .5;
+    }
+    60% {
+      transform: scale(1.1);
+      opacity: .8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
